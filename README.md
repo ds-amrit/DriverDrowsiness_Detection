@@ -30,18 +30,22 @@ Dlib: is a open source Landmark facial detector with pre-trained models to detec
 ## So how does DLib detects my face ? 
 
 Dlib is used to estimate the location of 68 coordinates (x,y) that map the facial points on a person’s face like the image below:
+
 ![image](https://user-images.githubusercontent.com/107737679/229684647-0041cc7d-8e5c-4d23-8a33-79dae51fe77a.png)
+
 Important Landmark points for different features:
- Parts
-Points
-*Left Eye
-[36-41]
-*Right Eye
-[42-47]
-Nose
-[27-35]
-Mouth 
-[48-67]
+
+![image](https://user-images.githubusercontent.com/107737679/229684919-c668b353-1394-4f69-80df-be00bece6975.png)
+
+The system uses a function to calculate the Eye Aspect Ratio (EAR), using landmark points as the ratio of height and width of the eye.
+
+![image](https://user-images.githubusercontent.com/107737679/229685137-5abf60d9-e9d8-43dc-a0ee-4fa86e96fc30.png)
+
+
+If the ratio > 0.25, i.e eyes are open.
+If the ratio < 0.25 but > 0.18, driver looks drowsy
+If the ratio < 0.18, driver is sleeping, Alert the driver!!
+
 
 
 
